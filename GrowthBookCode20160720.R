@@ -1,4 +1,3 @@
-setwd("C:/Users/Jim/Google Drive/Research - Growth (except Conflict)/Security and Growth (Trees)")
 # Load some of the package libraries we will need
 # All packages are free from the R "CRAN" website
 library(gdata) # for some data manipulation (like "subset")
@@ -10,7 +9,7 @@ library(nnet) # for ANNs
 library(pROC) # for ROC curves
 library(gbm) # for boosting regression tree predictor
 library(adabag) # for boosting classification tree predictor
-GrowthData.rfImpute <- read.dta("GrowthDataImputed.dta")
+load(url("https://github.com/bangecon/Growth-MachineLearning/raw/master/GrowthDataImputed.RData"))
 GrowthData.Full <- subset(GrowthData.rfImpute, Year > 1970)
 GrowthData.Full <- subset(GrowthData.Full, !is.na(GDPpcGrowthMA))
 GrowthData.Full <- subset(GrowthData.Full, !is.na(LagGDPpcGrowth))
